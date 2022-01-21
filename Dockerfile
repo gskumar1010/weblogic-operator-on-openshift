@@ -123,7 +123,7 @@ RUN chown -R oracle:root ${PROPERTIES_FILE_DIR}
 #
 # Set WORKDIR for @@PWD@@ global token in model file
 WORKDIR $ORACLE_HOME
-USER oracle
+USER 1005
 RUN if [ -n "$WDT_MODEL" ]; then MODEL_OPT="-model_file $PROPERTIES_FILE_DIR/${WDT_MODEL##*/}"; fi && \
     if [ -n "$WDT_ARCHIVE" ]; then ARCHIVE_OPT="-archive_file $PROPERTIES_FILE_DIR/${WDT_ARCHIVE##*/}"; fi && \
     if [ -n "$WDT_VARIABLE" ]; then VARIABLE_OPT="-variable_file $PROPERTIES_FILE_DIR/${WDT_VARIABLE##*/}"; fi && \ 
